@@ -10,6 +10,13 @@ def open_pack():
         'name': random_player.name,
         'position': random_player.pos,
         'overall': random_player.ovr,
+        'pace': random_player.pac,
+        'shooting': random_player.sho,
+        'passing': random_player.pas,
+        'dribbling' : random_player.dri,
+        'defense': random_player.defe,
+        'physicality': random_player.phy
+
     })
 
 if __name__ == "__main__":
