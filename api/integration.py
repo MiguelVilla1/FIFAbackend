@@ -1,10 +1,20 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, send_from_directory
 import random
-from flask_cors import CORS
 
-from model.integrationmodel import *
+app = Flask(__name)
 
-app = Flask(__name__)
+# ...
+
+# Define a route to serve player images
+@app.route('/player_images/<image_filename>')
+def player_image(image_filename):
+    return send_from_directory('static/player_images', image_filename)
+
+# ...
+
+if __name__ == '__main__':
+    app.run(host='localhost', port=8281)
+
 
 CORS(app)
 
