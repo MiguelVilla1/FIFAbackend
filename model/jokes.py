@@ -29,11 +29,11 @@ joke_list = {
     },
     "Erling Haaland": {
         "position" : ST,
-        "stats" : [91, 89, 93, 66, 80, 24, 88],
+        "stats" : [91, 89, 93, 66, 80, 24, 88]
     },
     "Kevin DeBruyne": {
         "position": CM,
-        "stats" : [91, 72, 88, 94, 87, 65, 78],
+        "stats" : [91, 72, 88, 94, 87, 65, 78]
     }
 
 }
@@ -44,17 +44,17 @@ def initJokes():
     #position = joke_list["Lionel Messi"]["position"]
     #position = joke_list[playerName]["position"]
     item_id = 0
-    for item in joke_list:
-        jokes_data.append({"id": item_id, "joke": item, "haha": 0, "boohoo": 0})
+    for player_name, player_info in joke_list.items():
+        jokes_data.append({"name": player_name, "position": player_info["position"], "stats": player_info["stats"]})
         item_id += 1
     # prime some haha responses
-    for i in range(10):
-        id = getRandomJoke()['id']
-        addJokeHaHa(id)
+    # for i in range(10):
+       #  id = getRandomJoke()['id']
+       #  addJokeHaHa(id)
     # prime some haha responses
-    for i in range(5):
-        id = getRandomJoke()['id']
-        addJokeBooHoo(id)
+    # for i in range(5):
+       #  id = getRandomJoke()['id']
+       #  addJokeBooHoo(id)
         
 # Return all jokes from jokes_data
 def getJokes():
@@ -69,58 +69,58 @@ def getRandomJoke():
     return(random.choice(jokes_data))
 
 # Liked joke
-def favoriteJoke():
-    best = 0
-    bestID = -1
-    for joke in getJokes():
-        if joke['haha'] > best:
-            best = joke['haha']
-            bestID = joke['id']
-    return jokes_data[bestID]
+# def favoriteJoke():
+    # best = 0
+    # bestID = -1
+    # for joke in getJokes():
+       #  if joke['haha'] > best:
+           #  best = joke['haha']
+            # bestID = joke['id']
+    # return jokes_data[bestID]
     
 # Jeered joke
-def jeeredJoke():
-    worst = 0
-    worstID = -1
-    for joke in getJokes():
-        if joke['boohoo'] > worst:
-            worst = joke['boohoo']
-            worstID = joke['id']
-    return jokes_data[worstID]
+# def jeeredJoke():
+  #   worst = 0
+  #   worstID = -1
+  #   for joke in getJokes():
+  #       if joke['boohoo'] > worst:
+  #           worst = joke['boohoo']
+  #           worstID = joke['id']
+   #  return jokes_data[worstID]
 
 # Add to haha for requested id
-def addJokeHaHa(id):
-    jokes_data[id]['haha'] = jokes_data[id]['haha'] + 1
-    return jokes_data[id]['haha']
+# def addJokeHaHa(id):
+   #  jokes_data[id]['haha'] = jokes_data[id]['haha'] + 1
+   #  return jokes_data[id]['haha']
 
 # Add to boohoo for requested id
-def addJokeBooHoo(id):
-    jokes_data[id]['boohoo'] = jokes_data[id]['boohoo'] + 1
-    return jokes_data[id]['boohoo']
+# def addJokeBooHoo(id):
+  #   jokes_data[id]['boohoo'] = jokes_data[id]['boohoo'] + 1
+  #   return jokes_data[id]['boohoo']
 
 # Pretty Print joke
-def printJoke(joke):
-    print(joke['id'], joke['joke'], "\n", "haha:", joke['haha'], "\n", "boohoo:", joke['boohoo'], "\n")
+# def printJoke(joke):
+  #   print(joke['id'], joke['joke'], "\n", "haha:", joke['haha'], "\n", "boohoo:", joke['boohoo'], "\n")
 
 # Number of jokes
-def countJokes():
-    return len(jokes_data)
+# def countJokes():
+   #  return len(jokes_data)
 
 # Test Joke Model
-if __name__ == "__main__": 
-    initJokes()  # initialize jokes
+# if __name__ == "__main__": 
+   #  initJokes()  # initialize jokes
     
     # Most likes and most jeered
-    best = favoriteJoke()
-    print("Most liked", best['haha'])
-    printJoke(best)
-    worst = jeeredJoke()
-    print("Most jeered", worst['boohoo'])
-    printJoke(worst)
+# best = favoriteJoke()
+   #  print("Most liked", best['haha'])
+   #  printJoke(best)
+   #  worst = jeeredJoke()
+   #  print("Most jeered", worst['boohoo'])
+  #   printJoke(worst)
     
     # Random joke
-    print("Random joke")
-    printJoke(getRandomJoke())
+ #    print("Random joke")
+  #   printJoke(getRandomJoke())
     
     # Count of Jokes
-    print("Jokes Count: " + str(countJokes()))
+  #   print("Jokes Count: " + str(countJokes()))
