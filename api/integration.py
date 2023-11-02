@@ -2,6 +2,8 @@ from flask import Flask, jsonify
 import random
 from flask_cors import CORS
 
+from model.integrationmodel import *
+
 app = Flask(__name__)
 
 CORS(app)

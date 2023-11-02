@@ -35,6 +35,7 @@ class Player:
         self.dri = dri
         self.defe = defe
         self.phy = phy
+<<<<<<< HEAD
 
 players = [
     (Player("Lionel Messi", CF, 90, 80, 87, 90, 94, 33, 64), 1 / 100),
@@ -67,8 +68,16 @@ players = [
     (Player("Paul Lasne", CDM, 69, 43, 61, 70, 67, 66, 70), 1 / 42),
     (Player("Auli Oliveros", CAM, 69, 81, 66, 66, 71, 59, 63), 1 / 42),
 ]
+=======
 
-weights = [1 if player.ovr <= 70 else 0.5 for player, _ in players]
+    # ... (same as in your code)
+
+    players = [
+        # ... (add your player instances here)
+    ]
+>>>>>>> e0a4518 (model fix)
+
+weights = [1 if player.ovr <= 70 else 0.5 for player in Player.players]
 
 class RandomPlayer(Resource):
     def get(self):
@@ -86,7 +95,44 @@ class RandomPlayer(Resource):
         }
         return player_info
 
+<<<<<<< HEAD
 api.add_resource(RandomPlayer, '/get_random_player')
+=======
+for player in Player.players:
+    feature = [player.pac, player.sho, player.pas, player.dri, player.defe, player.phy]
+    label = player.pos
+    features.append(feature)
+    labels.append(label)
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
+
+# Create a Decision Tree classifier and fit it to the data
+clf = DecisionTreeClassifier()
+clf.fit(X_train, y_train)
+
+@app.route('/get_random_player', methods=["GET"])
+def get_random_player():
+    random_player = random.choices(Player.players, weights=weights)[0]
+    player_info = {
+        "Name": random_player.name,
+        "Position": random_player.pos,
+        "Overall": random_player.ovr,
+        "Pace": random_player.pac,
+        "Shooting": random_player.sho,
+        "Passing": random_player.pas,
+        "Dribbling": random_player.dri,
+        "Defense": random_player.defe,
+        "Physicality": random_player.phy
+    }
+
+    # Use the ML model to predict the player's position
+    features = [random_player.pac, random_player.sho, random_player.pas, random_player.dri, random_player.defe, random_player.phy]
+    predicted_position = clf.predict([features])[0]
+    player_info["Predicted Position"] = predicted_position
+
+    return jsonify(player_info)
+>>>>>>> e0a4518 (model fix)
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8281)
