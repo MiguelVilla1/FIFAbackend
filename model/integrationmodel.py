@@ -95,5 +95,6 @@ def get_random_player():
 
     return jsonify(player_info)
 
+
 if __name__ == '__main__':
     app.run(host='localhost', port=8281)

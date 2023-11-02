@@ -49,6 +49,7 @@ def activate_job():  # activate these items
     initJokes()
     initUsers()
     initPlayers()
+    initIntegration()
 
 # this runs the application on the development server
 if __name__ == "__main__":
