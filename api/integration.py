@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 CORS(app)
 
-# Define position values
+
 CF = "Center Forward"
 ST = "Striker"
 RB = "Right Back"
@@ -76,13 +76,13 @@ def get_random_player():
     random_player, _ = random.choices(players, weights=weights)[0]
     player_info = {
         "Name": random_player.name,
-        "Position": random_player.pos,  # Removed extra space
-        "Overall": random_player.ovr,  # Removed extra space
-        "Pace": random_player.pac,  # Removed extra space
-        "Shooting": random_player.sho,  # Removed extra space
-        "Passing": random_player.pas,  # Removed extra space
-        "Dribbling": random_player.dri,  # Removed extra space
-        "Defense": random_player.defe,  # Removed extra space
+        "Position": random_player.pos,  
+        "Overall": random_player.ovr,  
+        "Pace": random_player.pac,  
+        "Shooting": random_player.sho,  
+        "Passing": random_player.pas, 
+        "Dribbling": random_player.dri,  
+        "Defense": random_player.defe,  
         "Physicality": random_player.phy
     }
     return jsonify(player_info)
