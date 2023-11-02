@@ -1,7 +1,10 @@
 from flask import Flask, jsonify
-import random
+import random 
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
 
 # Define position values
 CF = "Center Forward"
