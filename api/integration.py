@@ -66,7 +66,7 @@ players = [
 
 weights = [1 if player.ovr <= 70 else 0.5 for player, _ in players]
 
-@app.route('/get_random_player', methods=['GET'])
+@app.route('/get_random_player', methods=["GET"])
 def get_random_player():
     random_player, _ = random.choices(players, weights=weights)[0]
     player_info = {
@@ -83,4 +83,4 @@ def get_random_player():
     return jsonify(player_info)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='localhost', port=8282)
