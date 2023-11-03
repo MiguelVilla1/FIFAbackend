@@ -47,17 +47,62 @@ joke_list = {
     },
     "Kevin DeBruyne": {
         "position": CM,
-        "stats" : [91, 72, 88, 94, 87, 65, 78],
+        "stats" : [91, 72, 88, 94, 87, 65, 78]
     },
-    "Auli Oliveros" : {
-        "postion": CAM,
-        "stats" : [69, 81, 66, 66, 71, 59, 63],
+    "Sandro Tonali": {
+        "position": CM,
+        "stats": [86, 84, 74, 81, 81, 82, 84]
     },
-    "Heung Min Son" : { 
-        "postion" : LW,
-        "stats" : [87, 87, 88, 80, 84, 42, 70],
+    "Qiu Zhongyi": {
+        "position": CB,
+        "stats": [48, 56, 25, 27, 34, 51, 52]
     },
-    ""
+    "Marcus Rashford": {
+        "position": LW,
+        "stats": [85, 90, 86, 78, 84, 42, 74]
+    },
+    "Vinicius Jr": {
+        "position": LW,
+        "stats": [89, 95, 82, 78, 90, 29, 68]
+    },
+    "Bruno Fernandes": {
+        "position": CAM,
+        "stats": [88, 71, 86, 90, 83, 69, 77]
+    },
+    "Kaoru Mitoma": {
+        "position": LM,
+        "stats": [80, 84, 73, 74, 85, 57, 65]
+    },
+    "Eberechi Eze": {
+        "position": CAM,
+        "stats": [79, 77, 76, 77, 82, 49, 68]
+    },
+    "Chris Donell": {
+        "position": CM,
+        "stats": [55, 63, 47, 52, 56, 48, 65]
+    },
+    "Son Seung Woo": {
+        "position": RWB,
+        "stats": [48, 62, 26, 34, 44, 47, 51]
+    },
+    "Jayden Harris": {
+        "position": CDM,
+        "stats": [58, 66, 48, 53, 54, 54, 69]    
+    },
+    "James Madisson": {
+        "position": CAM,
+        "stats": [84, 71, 81, 86, 86, 54, 63]
+    },
+    "Paulo Dybala": {
+        "position": CF,
+        "stats": [86, 80, 85, 85, 90, 40, 60]
+    },
+    "Hakan Calhanoglu": {
+        "position": CM,
+        "stats": [85, 67, 80, 86, 85, 70, 66]
+    },
+    
+
 
 }
 
