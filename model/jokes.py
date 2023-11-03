@@ -34,7 +34,16 @@ joke_list = {
     "Kevin DeBruyne": {
         "position": CM,
         "stats" : [91, 72, 88, 94, 87, 65, 78],
-    }
+    },
+    "Auli Oliveros" : {
+        "postion": CAM,
+        "stats" : [69, 81, 66, 66, 71, 59, 63],
+    },
+    "Heung Min Son" : { 
+        "postion" : LW,
+        "stats" : [87, 87, 88, 80, 84, 42, 70],
+    },
+    ""
 
 }
 
