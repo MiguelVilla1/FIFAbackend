@@ -101,8 +101,18 @@ joke_list = {
         "position": CM,
         "stats": [85, 67, 80, 86, 85, 70, 66]
     },
-    
-
+    "Iago Aspas": {
+        "position": ST,
+        "stats": [85, 81, 85, 79, 86, 35, 64]
+    },
+    "Antony": {
+        "position": RM,
+        "stats": [70, 83, 58, 63, 73, 38, 51]
+    },
+    "Noah Katterbach": {
+        "position": LB,
+        "stats": [69, 71, 40, 57, 72, 66, 58]
+    }
 
 }
 
