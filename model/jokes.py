@@ -27,6 +27,20 @@ joke_list = {
         "position" : ST,
         "stats": [86, 85, 90, 75, 92, 45, 78]
     },
+    "Kylian Mbappe": {
+        "position" : ST,
+        "stats": {91, 97, 90, 80, 92, 36, 78}
+    },
+
+    "Sergi Roberto": {
+        "position" : RB,
+        "stats": {80, 74, 63, 79, 77, 75, 73}
+    },
+
+    "Ryota Morioka": {
+        "Position" : CM,
+        "stats": {72, 42, 69, 74, 69, 71, 68}
+    },
     "Erling Haaland": {
         "position" : ST,
         "stats" : [91, 89, 93, 66, 80, 24, 88],
