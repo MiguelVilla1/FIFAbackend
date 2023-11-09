@@ -4,6 +4,9 @@ import requests  # used for testing
 import random
 
 from model import *
+from model.jokes import getJokes
+from model.jokes import getJoke
+from api.joke import * # Blueprint import api definition
 
 joke_api = Blueprint('joke_api', __name__,
                    url_prefix='/api/jokes')
@@ -27,38 +30,10 @@ class JokesAPI:
         def get(self, id):
             return jsonify(getJoke(id))
 
-    # getRandomJoke()
-    class _ReadRandom(Resource):
-        def get(self):
-            return jsonify(getRandomJoke())
-    
-    # getRandomJoke()
-    class _ReadCount(Resource):
-        def get(self):
-            count = countJokes()
-            countMsg = {'count': count}
-            return jsonify(countMsg)
-
-    # put method: addJokeHaHa
-    class _UpdateLike(Resource):
-        def put(self, id):
-            addJokeHaHa(id)
-            return jsonify(getJoke(id))
-
-    # put method: addJokeBooHoo
-    class _UpdateJeer(Resource):
-        def put(self, id):
-            addJokeBooHoo(id)
-            return jsonify(getJoke(id))
-
     # building RESTapi resources/interfaces, these routes are added to Web Server
     api.add_resource(_Create, '/create/<string:joke>')
     api.add_resource(_Read, '/')
     api.add_resource(_ReadID, '/<int:id>')
-    api.add_resource(_ReadRandom, '/random')
-    api.add_resource(_ReadCount, '/count')
-    api.add_resource(_UpdateLike, '/like/<int:id>')
-    api.add_resource(_UpdateJeer, '/jeer/<int:id>')
     
 if __name__ == "__main__": 
     # server = "http://127.0.0.1:5000" # run local
