@@ -46,7 +46,7 @@ weights = [1 if player.ovr <= 70 else 0.5 for player in Player.players]
 
 class RandomPlayer(Resource):
     def get(self):
-        random_player, _ = random.choices(players, weights=weights)[0]
+        random_player, _ = random.choices(Player.players, weights=weights)[0]
         player_info = {
             "Name": random_player.name,
             "Position": random_player.pos,

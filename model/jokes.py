@@ -123,7 +123,7 @@ def initJokes():
     #position = joke_list[playerName]["position"]
     item_id = 0
     for player_name, player_info in joke_list.items():
-        jokes_data.append({"name": player_name, "position": player_info["position"], "stats": player_info["stats"]})
+        jokes_data.append({"name": player_name, "position": player_info.get("position"), "stats": player_info.get("stats")})
         item_id += 1
     # prime some haha responses
     # for i in range(10):
